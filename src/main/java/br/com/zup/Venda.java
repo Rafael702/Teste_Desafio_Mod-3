@@ -1,21 +1,24 @@
 package br.com.zup;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Venda {
     private VendedorResponsavel vendedor;
     private Cliente cliente;
-    private String dataDeRegistro;
+    private LocalDate dataDeRegistro;
     private double valorASerPago;
 
 
     public Venda() {
     }
 
-    public Venda(double valorASerPago, String dataDeRegistro) {
+    public Venda(double valorASerPago, LocalDate dataDeRegistro) {
         this.valorASerPago = valorASerPago;
         this.dataDeRegistro = dataDeRegistro;
     }
 
-    public Venda(Cliente clientes, VendedorResponsavel vendedor, double valorASerPago, String dataDeRegistro) {
+    public Venda(Cliente clientes, VendedorResponsavel vendedor, double valorASerPago, LocalDate dataDeRegistro) {
         this.dataDeRegistro = dataDeRegistro;
         this.valorASerPago = valorASerPago;
         this.cliente = clientes;
@@ -46,11 +49,11 @@ public class Venda {
         this.valorASerPago = valorASerPago;
     }
 
-    public String getDataDeRegistro() {
+    public LocalDate getDataDeRegistro() {
         return dataDeRegistro;
     }
 
-    public void setDataDeRegistro(String dataDeRegistro) {
+    public void setDataDeRegistro(LocalDate dataDeRegistro) {
         this.dataDeRegistro = dataDeRegistro;
     }
 

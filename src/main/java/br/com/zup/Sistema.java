@@ -102,7 +102,7 @@ public class Sistema {
         vendedor = ServicoVenda.cadastrarVendedor(informarNome(), informarCpf(), informarEmail());
 
         return ServicoVenda.validacoesDeCadastros(cliente, vendedor,
-                ServicoVenda.cadastrarVendas(cliente, vendedor, valorASerPago, dataDeRegistro));
+                ServicoVenda.cadastrarVendas(cliente, vendedor, valorASerPago));
 
     }
 

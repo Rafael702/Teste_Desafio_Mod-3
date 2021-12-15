@@ -19,10 +19,10 @@ public class ServicoCliente {
         return cliente;
     }
 
-    public static boolean validarCadastroParaVendas(String cpf) throws Exception {
+    public static boolean validarCadastroParaVendas(String cpf) {
         boolean cadastrado = false;
         if (clientes.isEmpty()) {
-            throw new Exception("Nenhum Cliente Cadastrado.");
+            throw new RuntimeException("Nenhum Cliente Cadastrado.");
         } else {
             for (Cliente clienteResponsavel : clientes) {
                 if (clienteResponsavel.getCpf().equals(cpf)) {
@@ -30,7 +30,7 @@ public class ServicoCliente {
                     return cadastrado;
                 }
             }
-            throw new Exception("CPF do Cliente não foi Encontrado. Verifique a lista de Clientes cadastrados na Opção 4");
+            throw new RuntimeException("CPF do Cliente não foi Encontrado. Verifique a lista de Clientes cadastrados na Opção 4");
         }
     }
 

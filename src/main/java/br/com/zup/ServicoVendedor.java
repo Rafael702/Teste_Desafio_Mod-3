@@ -19,10 +19,10 @@ public class ServicoVendedor {
     }
 
 
-    public static boolean validarCadastro(String cpf) throws Exception {
+    public static boolean validarCadastro(String cpf) {
         boolean cadastrado = false;
         if (vendedores.isEmpty()) {
-            throw new Exception("Nenhum Vendedor Cadastrado.");
+            throw new RuntimeException("Nenhum Vendedor Cadastrado.");
         } else {
             for (VendedorResponsavel vendedorResponsavel : vendedores) {
                 if (vendedorResponsavel.getCpf().equals(cpf)) {
@@ -30,7 +30,7 @@ public class ServicoVendedor {
                     return cadastrado;
                 }
             }
-            throw new Exception("Email do Vendedor não foi Encontrado. Verifique a lista de Vendedores cadastrados na Opção 4");
+            throw new RuntimeException("Email do Vendedor não foi Encontrado. Verifique a lista de Vendedores cadastrados na Opção 4");
         }
     }
 
